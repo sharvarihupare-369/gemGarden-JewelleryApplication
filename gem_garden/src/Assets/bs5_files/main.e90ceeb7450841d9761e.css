@@ -1,0 +1,106 @@
+@font-face {
+  font-family: 'RolleteqakuRegular';
+  src: url('https://assets.cltstatic.com/fonts/maatran/rolleteqaku-regular-webfont.woff2')
+      format('woff2'),
+    url('https://assets.cltstatic.com/fonts/maatran/rolleteqaku-regular-webfont.woff')
+      format('woff'),
+    url('https://assets.cltstatic.com/fonts/maatran/RolleteQaku-Regular.ttf')
+      format('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'MuliRegular';
+  src: url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-regular-webfont..woff2) format('woff2'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-regular-webfont..woff) format('woff'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-regular-webfont..ttf) format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MuliLight';
+  src: url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-light-webfont..woff2) format('woff2'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-light-webfont..woff) format('woff'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-light-webfont..ttf) format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MuliSemiBold';
+  src: url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-semibold-webfont..woff2) format('woff2'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-semibold-webfont..woff) format('woff'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-semibold-webfont..ttf) format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'MuliBold';
+  src: url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-bold-webfont..woff2) format('woff2'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-bold-webfont..woff) format('woff'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/muli-bold-webfont..ttf) format('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'BegumRegular';
+  src: url(https://assets.cltstatic.com/desktop/live/maatran/build/begum-regular-webfont..woff2) format('woff2'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/begum-regular-webfont..woff) format('woff'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/begum-regular-webfont..ttf) format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'BegumMedium';
+  src: url(https://assets.cltstatic.com/desktop/live/maatran/build/begum-medium-webfont..woff2) format('woff2'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/begum-medium-webfont..woff) format('woff'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/begum-medium-webfont..ttf) format('ttf');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'BegumSemiBold';
+  src: url(https://assets.cltstatic.com/desktop/live/maatran/build/begum-semibold-webfont..woff2) format('woff2'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/begum-semibold-webfont..woff) format('woff'),
+    url(https://assets.cltstatic.com/desktop/live/maatran/build/begum-semibold-webfont..ttf) format('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'InterBold';
+  src: url('https://assets.cltstatic.com/fonts/maatran/Inter-Bold.woff2')
+      format('woff2'),
+    url('https://assets.cltstatic.com/fonts/maatran/Inter-Bold.woff')
+      format('woff'),
+    url('https://assets.cltstatic.com/fonts/maatran/Inter-Bold.ttf')
+      format('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'InterRegular';
+  src: url('https://assets.cltstatic.com/fonts/maatran/Inter-Regular.woff2')
+      format('woff2'),
+    url('https://assets.cltstatic.com/fonts/maatran/Inter-Regular.woff')
+      format('woff'),
+    url('https://assets.cltstatic.com/fonts/maatran/Inter-Regular.ttf')
+      format('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'InterSemiBold';
+  src: url('https://assets.cltstatic.com/fonts/maatran/Inter-SemiBold.woff2')
+      format('woff2'),
+    url('https://assets.cltstatic.com/fonts/maatran/Inter-SemiBold.woff')
+      format('woff'),
+    url('https://assets.cltstatic.com/fonts/maatran/Inter-SemiBold.ttf')
+      format('ttf');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'InterMedium';
+  src: url('https://assets.cltstatic.com/fonts/maatran/Inter-Medium.woff2')
+      format('woff2'),
+    url('https://assets.cltstatic.com/fonts/maatran/Inter-Medium.woff')
+      format('woff'),
+    url('https://assets.cltstatic.com/fonts/maatran/Inter-Medium.ttf')
+      format('ttf');
+  font-display: swap;
+}
+
