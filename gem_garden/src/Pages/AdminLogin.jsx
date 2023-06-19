@@ -60,7 +60,7 @@ export const AdminLogin = () => {
                 })
                return setTimeout(()=>{
                 navigate("/admin")
-               })
+               },4000)
               
                
               }else{  

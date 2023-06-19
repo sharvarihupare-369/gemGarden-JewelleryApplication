@@ -23,6 +23,7 @@ export const reducer = (state=initialState,{type,payload}) => {
             ...state,
             isLoading : false,
             isError : false,
+            user:[...state.user,payload],
             isAuth : false,
 
            }
@@ -38,8 +39,7 @@ export const reducer = (state=initialState,{type,payload}) => {
       case LOGIN_SUCCESS : {
         return {
           ...state,
-          isLoading : false,
-          user:payload,
+          isLoading : false, 
           isError : false,
           isAuth : true
         }

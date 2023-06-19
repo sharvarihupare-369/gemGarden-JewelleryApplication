@@ -22,27 +22,24 @@ import {
  } from '@chakra-ui/react';
 import { ArrowForwardIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
 import { useDispatch, useSelector } from 'react-redux'
+import { login } from '../Redux/Authentication/action';
 // import { login } from '../Redux/Authentication/action'
 
 
 export function Login() {
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [showPassword, setShowPassword] = useState(false);
   const toast = useToast()
   const location = useLocation()
-
   const {user} = useSelector((store)=>store.authReducer)
   const {isAuth} = useSelector((store)=>store.authReducer)
   const {isError} = useSelector((store)=>store.authReducer)
-  const {errorMessage} = useSelector((store)=>store.authReducer)
   const [logindata,setLoginData] = useState({
     email:"",
     password:""
   })
-
-
-
 
   const handleLogin = (e) => {
       e.preventDefault()
@@ -57,28 +54,27 @@ export function Login() {
               }) 
       }
 
-    //   dispatch(login(logindata))
-      if(isAuth){
+      dispatch(login(logindata)).then((res)=>{
+        // console.log("YEs")
         toast({
-          title: 'Failed!!',
-          description: 'Please fill all the fields.',
-          status: 'error',
-          position: 'top',
-          duration: 4000,
-          isClosable: true,
-        }) 
-        navigate("/")
-        return 
-      }
-      // console.log(data)
-      // if(!isAuth){
-      //   alert("error")
-      // }
+                title: 'Success',
+                description: 'User Registered Successful',
+                status: 'success',
+                position: 'top',
+                duration: 4000,
+                isClosable: true,
+              })
+          // navigate(location.state, {replace:true})
+          setTimeout(()=>{
+            navigate("/")
+          },4000)
+      })
+       
+        
+
+      
 
   }
-
-  
- 
 
 
   const [submissiondisbled,setSubmissiondisbled] = useState(false)

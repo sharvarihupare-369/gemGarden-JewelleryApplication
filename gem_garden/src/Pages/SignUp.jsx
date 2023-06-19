@@ -34,6 +34,7 @@ import axios from 'axios';
 
 
 export function SignUp() {
+
   const navigate = useNavigate()
   const dispatch = useDispatch()
   const [showPassword, setShowPassword] = useState(false);
@@ -46,7 +47,6 @@ export function SignUp() {
     email:"",
     password:""
   })
-  
 
   const [submissiondisbled,setSubmissiondisbled] = useState(false)
 
@@ -91,81 +91,37 @@ export function SignUp() {
       }
       
 
-      dispatch(signup(formvalue))
+      dispatch(signup(formvalue)).then((res)=>{
+        console.log(res)
+        if(res){
+          toast({
+                        title: 'Success',
+                        description: 'User Registered Successful',
+                        status: 'success',
+                        position: 'top',
+                        duration: 4000,
+                        isClosable: true,
+                  })
+            setTimeout(()=>{
+              navigate("/login")
+            },4000)
+             setFormvalue({firstname:"", lastname:"", email:"",password:""}) 
+             return 
+        }else{
+          return toast({
+            title: 'Failed',
+            description: 'User Registered Failed',
+            status: 'success',
+            position: 'top',
+            duration: 4000,
+            isClosable: true,
+          })
+        }
+      })
        
-        // setFormvalue({firstname:"", lastname:"", email:"",password:""})
+        // 
    
   }
-
-  // useEffect(()=>{
-  //   if(tokenID){
-  //    toast({
-  //             title: 'Success',
-  //             description: 'User Registered Successful',
-  //             status: 'success',
-  //             position: 'top',
-  //             duration: 4000,
-  //             isClosable: true,
-  //           })
-  //   }
-
-  //   if(errorMessage == "Firebase: Error (auth/email-already-in-use)."){
-  //     toast({
-  //             title: 'Failed!!',
-  //             description: 'Firebase: Error (auth/email-already-in-use)',
-  //             status: 'error',
-  //             position: 'top',
-  //             duration: 4000,
-  //             isClosable: true,
-  //           })
-  //   }
-  // },[tokenID,errorMessage])
-
-  // useEffect(() => {
-  //   if(tokenID){
-  //     toastIdRef.current = toast({
-  //       title: 'Success',
-  //       description: 'User Registered Successful',
-  //       status: 'success',
-  //       position: 'top',
-  //       duration: 4000,
-  //       isClosable: true,
-  //     }) as string;
-  //      setTimeout(()=>{
-  //        navigate("/login")
-  //      },4000)
-  //   }
-  
-    
-  //   return () => {
-     
-  //     if (toastIdRef.current) {
-  //       toast.close(toastIdRef.current);
-  //     }
-  //   };
-  // }, [tokenID])
-
-
-
-  //  useEffect(()=>{
-  //   if(errorMessage == "Firebase: Error (auth/email-already-in-use)."){
-  //     toastIdRef.current = toast({
-  //       title: 'Failed!!',
-  //       description: 'User already registered!',
-  //       status: 'warning',
-  //       position: 'top',
-  //       duration: 4000,
-  //       isClosable: true,
-  //     }) as string;
-  //   }
-  //   return () => {
-     
-  //     if (toastIdRef.current) {
-  //       toast.close(toastIdRef.current);
-  //     }
-  //   };
-  //  },[errorMessage])
-
 
   return (
    <>
