@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getSingleProducts } from "../Redux/Products/action";
+import { getSingleProducts } from "./PRODUCTS/action";
 import { Dispatch } from "redux";
 import styled from "@emotion/styled";
 import { Button, Input, Select } from "@chakra-ui/react";
@@ -11,7 +11,7 @@ import { AiFillSafetyCertificate } from "react-icons/ai";
 import { RiExchangeCnyFill } from "react-icons/ri";
 import { BiArchiveOut } from "react-icons/bi";
 import { FaShippingFast } from "react-icons/fa";
-import { ToastStatusExample } from "../Redux/PRODUCTS/alert";
+import { ToastStatusExample } from "./PRODUCTS/alert";
 export const SingleProductPage = () => {
   const arrivalData = useSelector(
     (store) => store.productReducer.singlePageData
