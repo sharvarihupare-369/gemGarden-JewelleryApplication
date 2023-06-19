@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Admin.module.css";
 import { addProduct, deleteProduct, getProducts, updateProducts } from "../Redux/Admin/api";
+//import AdminProductCards from "../Components/AdminProductCards";
 import { useSearchParams } from "react-router-dom";
-
 
 
 const initialState = {
@@ -35,8 +35,8 @@ export const Admin = () => {
   const [id, setId] = useState(initialId || null);
 
 
-const[editId,setEditId]=useState()
-const [deleteId,setDeleteId]=useState()
+const[editId,setEditId]=useState(null)
+const [deleteId,setDeleteId]=useState(null)
 
 
 
@@ -75,7 +75,7 @@ const [deleteId,setDeleteId]=useState()
 
 
   useEffect(() => {
-    let params  = {
+    let params: Record = {
       material: material,
       type: type,
       order: order,
@@ -106,6 +106,13 @@ const [deleteId,setDeleteId]=useState()
     const { value } = e.target;
     setId(value);
   };
+
+
+
+
+
+
+
 
 
 
@@ -405,8 +412,8 @@ const handelDelete = (id) => {
               <p>{el.material}</p>
               <h2>{el.currentprice} Rs</h2>
               <div className={`${styles.Edit_deletebutton}`}>
-                <button className={`${styles.editbtn}`}   onClick={() =>handleEdit(!el.id)}  >Edit</button>
-                <button className={`${styles.deletebtn}`} onClick={()=>handelDelete(!el.id)}   >Delete</button>
+                <button className={`${styles.editbtn}`}   onClick={() =>handleEdit(el.id)}  >Edit</button>
+                <button className={`${styles.deletebtn}`} onClick={()=>handelDelete(el.id)}   >Delete</button>
               </div>
             </div>
           ))}
