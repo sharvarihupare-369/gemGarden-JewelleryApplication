@@ -2,12 +2,12 @@ import React from "react";
 import { getProducts } from "../Redux/Products/action";
 import { useDispatch, useSelector } from "react-redux";
 // import { Dispatch } from "redux";
-import { Card } from "./PRODUCTS/Card";
+import { Card } from "../Redux/PRODUCTS/Card";
 // import { Sidebarprod } from './PRODUCTS/Sidebarprod'
 import styled from "@emotion/styled";
 
 import { useSearchParams } from "react-router-dom";
-import { Sidebarfilter } from "./PRODUCTS/Sidebarprod";
+import { Sidebarfilter } from "../Redux/PRODUCTS/Sidebarprod";
 import { Button } from "@chakra-ui/react";
 
 export const Product = () => {

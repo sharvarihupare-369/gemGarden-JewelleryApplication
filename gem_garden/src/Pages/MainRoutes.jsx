@@ -13,6 +13,7 @@ import { Cart } from './Cart'
 import  Payment from './Payment'
 import { WishList } from './WishList.jsx'
 import { AdminLogin } from './AdminLogin'
+import { PrivateRoute } from '../Components/PrivateRoute'
 
 
 
@@ -29,14 +30,14 @@ export const MainRoutes = () => {
       <Route path='/adminlogin' element={<AdminLogin/>} />
       <Route path='/signup' element={<SignUp/>} />
       <Route path='/product' element={
-      //   <PrivateRoute>
+        <PrivateRoute>
           <Product/>
-      //    </PrivateRoute>
+        </PrivateRoute>
     } />
       <Route path='/product/:id' element={
-      //   <PrivateRoute>
+        <PrivateRoute>
           <SingleProductPage/>
-      //   </PrivateRoute>
+       </PrivateRoute>
 
       } />
       <Route path='/cart' element={<Cart/>} />
