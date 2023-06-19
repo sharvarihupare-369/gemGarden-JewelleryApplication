@@ -75,7 +75,7 @@ const [deleteId,setDeleteId]=useState(null)
 
 
   useEffect(() => {
-    let params: Record = {
+    let params = {
       material: material,
       type: type,
       order: order,
