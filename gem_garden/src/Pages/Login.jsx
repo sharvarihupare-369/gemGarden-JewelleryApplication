@@ -55,10 +55,10 @@ export function Login() {
       }
 
       dispatch(login(logindata)).then((res)=>{
-        // console.log("YEs")
+
         toast({
                 title: 'Success',
-                description: 'User Registered Successful',
+                description: 'User LoggedIn Successful',
                 status: 'success',
                 position: 'top',
                 duration: 4000,
@@ -69,10 +69,7 @@ export function Login() {
             navigate("/")
           },4000)
       })
-       
         
-
-      
 
   }
 

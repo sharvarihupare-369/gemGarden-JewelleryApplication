@@ -1,0 +1,313 @@
+.admin{ 
+    /*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=31302f&c2=2a2a2a&gt=r&gd=dcc
+*/
+/* background: #31302F;
+background: radial-gradient(at center, #31302F, #2A2A2A);
+font-family: 'Nunito Sans', sans-serif;
+padding-bottom: 50px; */
+display: flex;
+flex-direction: column;
+}
+
+.navbarAdmin{
+    position:sticky;
+    z-index: -2;
+    /* border: 2px solid red; */
+}
+h1{
+    font-weight: 200;
+    font-size:30px;
+    color: rgba(255, 255, 255, 0.825);
+    padding: 20px 0px 20px;
+  
+
+
+
+/* background: #363527;
+background: linear-gradient(0deg, #363527, #010101);  */
+background-color: #343325;
+}
+.AdminPageContainer{
+    display: flex;
+    /* border: 2px solid red; */
+    justify-content: space-between;
+ 
+
+}
+.Sortbar{
+    width:13% ;
+    background: #363527;
+background: linear-gradient(180deg, #363527, #010101);
+
+height: 100vh;
+color: white;
+font-size: 70%;
+
+padding: 10px 10px 10px;
+position: sticky;
+top: 0;
+}
+.Sortbar>form>p{
+    margin:5px 0px 0px;
+    padding: 0px 15px 5px;
+    border-top: 1px solid grey;
+ 
+}
+.Sortbar>form>select,.Sortbar>form>input{
+    padding: 0px 10px 0px;
+    width: 100%;
+    border-radius: 2px;
+margin-top: 10px;
+height: 30px;
+background-color: black;
+    outline: none;
+}
+.Checkbox>input{
+    width: 40px;
+}
+.Checkbox{
+    
+    text-align:left;
+    align-items: center;
+}
+.AdminProductsList{
+width: 60%;
+/* margin: auto; */
+padding: 20px 20px 20px;
+background-color: white;
+
+display: grid;
+grid-template-columns: repeat(4,1fr);
+grid-template-rows: repeat(2,1fr);
+gap: 20px;
+justify-content: space-between;
+position: sticky;
+}
+.FormButtonDiv{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-evenly;
+}
+.AdminProductCards{
+    font-size: 60%;
+    border-bottom: 2px solid rgb(190, 190, 190);
+    border-left: 1px solid rgb(178, 178, 178);
+/* height: 
+300px; */
+border-radius: 5px;
+padding-bottom: 20px;
+}
+.AdminProductCards>img{
+   width: 100%;
+
+}
+.AdminProductCards>h2{
+    font-weight: 800;
+    font-size: 100%;
+}
+.Edit_deletebutton{
+display: flex;
+justify-content: space-around;
+}
+.Edit_deletebutton>button{
+  
+  width: 60px;
+  border-radius: 5px ;
+  padding: 5px;
+}
+.editbtn{
+    background-color: rgb(215, 176, 34);
+    color: white;
+}
+.editbtn:hover{
+    background-color: rgb(248, 248, 248);
+    color:  rgb(185, 155, 47);;
+    border: 1px solid  rgb(215, 176, 34);;
+}
+.deletebtn:hover{
+    background-color: rgb(248, 248, 248);
+    color:  rgb(210, 64, 140);;
+    border: 1px solid  rgb(210, 64, 140);;
+}
+.deletebtn{
+    background-color: rgb(210, 64, 140);
+    color: white;
+}
+
+.AddingSection{
+/*
+* Created with https://www.css-gradient.com
+* Gradient link: https://www.css-gradient.com/?c1=363527&c2=010101&gt=l&gd=dtt
+*/
+background: #363527;
+background: linear-gradient(180deg, #363527, #010101);
+width: 28%; 
+height: 100vh;
+
+padding: 10px 10px 10px;
+position: sticky;
+top: 0;
+
+    /* border: 5px solid orange; */
+}
+.ProductAddingForm>form,
+.ProductAddingForm{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+    justify-content: center;
+   font-size: 85%;
+    border-radius: 5px;
+    padding: 10px 10px 10px;
+    border: 1px dashed grey;
+    color: white;
+}
+.ProductAddingForm>form>input,
+.ProductAddingForm>form>select{
+    outline: none;
+    border: 1px solid grey;
+    margin: 5px;
+    color: #2E2D2D;
+    padding: 2px 10px 2px;
+    border-radius: 5px;
+}
+.tagBestSeller{
+    display: flex;
+margin-top: 25px;
+}
+.tagBestSeller>input{
+    width: 25px;
+    
+}
+label{
+    margin-right: 25px;
+}
+.FormButtonDiv>button{
+    background-color: rgb(255, 255, 255);
+    width: 80px;
+    height: 40px;
+    margin: auto;
+    color: #2E2D2D; 
+    padding: 2px 10px 2px;
+    border-radius: 5px;  
+    font-weight: 600;
+}
+.pricetodiscount{
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.SlidingComponent{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.slider{
+  width: 100%;
+ 
+}
+.slider>input{
+width: 100%;
+
+
+color: chocolate;
+background-color: rgb(49, 49, 23); /* Change the background color to yellow */
+cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+.slidingnumber{
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
+.pricetodiscount>input{
+    width: 150px;
+   
+    align-items: center;
+   
+
+    outline: none;
+    border: 1px solid grey;
+    margin: 5px;
+    color: #2E2D2D;
+    padding: 2px 10px 2px;
+    border-radius: 5px;
+
+
+}
+.FormButtonDiv>button:hover{
+    background-color: #2E2D2D;
+    color: white;
+    border: 1px solid white;
+    
+
+  
+    padding: 2px 10px 2px;
+    border-radius: 5px;
+}
+@media(max-width:1000px){
+
+    .AdminProductsList{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 60px;
+    }
+    .AdminPageContainer{
+        display: flex;
+        flex-direction:column-reverse;
+    }
+    .AddingSection{
+
+        background: #363527;
+        background: linear-gradient(180deg, #363527, #010101);
+        width: 100%; 
+        height: 60vh;
+        position: relative;
+        padding: 10px 10px 10px;
+        
+        
+        
+            /* border: 5px solid orange; */
+        }
+}
+@media(max-width:800px){
+
+    .AdminProductsList{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 40px;
+    }
+    .AdminPageContainer{
+        display: flex;
+        flex-direction:column-reverse;
+    }
+    .AddingSection{
+
+        background: #363527;
+        background: linear-gradient(180deg, #363527, #010101);
+        width: 100%; 
+        height: 60vh;
+        position: relative;
+        padding: 10px 10px 10px;
+        
+      
+        
+            /* border: 5px solid orange; */
+        }
+}
