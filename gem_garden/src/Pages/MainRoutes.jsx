@@ -22,7 +22,6 @@ export const MainRoutes = () => {
    <Box>
     <Routes>
       <Route path='/' element={<HomePage/>} />
-
       <Route path='/contact' element={<Contact/>} />
       <Route path='/about' element={<About/>} />
       <Route path='/admin' element={<Admin/>} />
@@ -35,9 +34,9 @@ export const MainRoutes = () => {
   
     } />
       <Route path='/product/:id' element={
-        <PrivateRoute>
+        // <PrivateRoute>
           <SingleProductPage/>
-       </PrivateRoute>
+      //  {/* </PrivateRoute> */}
 
       } />
       <Route path='/cart' element={<Cart/>} />

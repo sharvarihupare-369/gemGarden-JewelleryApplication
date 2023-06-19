@@ -1,7 +1,8 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getSingleProducts } from "./PRODUCTS/action";
+// import { getSingleProducts } from "./PRODUCTS/action";
+import { getSingleProducts } from "../Redux/Products/action";
 import { Dispatch } from "redux";
 import styled from "@emotion/styled";
 import { Button, Input, Select } from "@chakra-ui/react";

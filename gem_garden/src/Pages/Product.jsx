@@ -1,5 +1,6 @@
 import React from "react";
-import { getProducts } from "./PRODUCTS/action";
+import { getProducts } from "../Redux/Products/action";
+
 import { useDispatch, useSelector } from "react-redux";
 // import { Dispatch } from "redux";
 import { Card } from "./PRODUCTS/Card";

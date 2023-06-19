@@ -161,7 +161,7 @@ import { useNavigate } from 'react-router-dom';
               fontSize={'sm'}
               fontWeight={500}
               variant={'link'}
-              href={'#'}>
+              href={'/cart'}>
               Bag
             </Button>
             
