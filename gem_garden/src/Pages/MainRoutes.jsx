@@ -30,9 +30,9 @@ export const MainRoutes = () => {
       <Route path='/adminlogin' element={<AdminLogin/>} />
       <Route path='/signup' element={<SignUp/>} />
       <Route path='/product' element={
-        <PrivateRoute>
+       
           <Product/>
-        </PrivateRoute>
+  
     } />
       <Route path='/product/:id' element={
         <PrivateRoute>
