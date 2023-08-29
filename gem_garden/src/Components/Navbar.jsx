@@ -15,7 +15,15 @@ import {
     useBreakpointValue,
     useDisclosure,
     Image,
-    Input
+    Input,
+    Menu,
+    MenuButton,
+    MenuList,
+    MenuItem,
+    MenuItemOption,
+    MenuGroup,
+    MenuOptionGroup,
+    MenuDivider,
   } from '@chakra-ui/react';
   // import './Navbar.module.css'
   import {useState} from 'react';
@@ -29,12 +37,22 @@ import { FaSearch } from 'react-icons/fa';
     ChevronRightIcon,
   } from '@chakra-ui/icons';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch,useSelector } from 'react-redux';
+import { logout } from '../Redux/Authentication/action';
   
   export default function Navbar() {
     const { isOpen, onToggle } = useDisclosure();
     const navigate = useNavigate()
+    // const { isAuth,errMsg,token } = useSelector((s/tore) => store.authReducer)
 
     const [show,setShow] = useState(false)
+
+    const dispatch = useDispatch()
+    const { token } = useSelector((store) => store.authReducer)
+
+    const handleLogout = () => {
+       dispatch(logout(token))
+    }
 
     return (
       <Box position={"sticky"} top="0" zIndex={"overlay"} >
@@ -136,7 +154,7 @@ import { useNavigate } from 'react-router-dom';
 
               Contact Us
             </Button>
-            <Text
+            {/* <Text
             onClick={()=>navigate("/signup")}
             _hover={{
               color:"rgb(255,189,89)"
@@ -149,7 +167,33 @@ import { useNavigate } from 'react-router-dom';
               variant={'link'}
               href={'#'}>
               Account
-            </Text>
+            </Text> */}
+            <Menu>
+  <MenuButton 
+  color={"white"}
+           _hover={{
+              color:"rgb(255,189,89)"
+            }}
+            // href={'#'}
+            // as={Button} 
+            // rightIcon={<ChevronDownIcon />}
+      >
+    Account
+  </MenuButton>
+  <MenuList >
+    <MenuItem _hover={{
+              color:"rgb(255,189,89)"
+            }}>Profile</MenuItem>
+    <MenuItem _hover={{
+              color:"rgb(255,189,89)"
+            }} onClick={()=>navigate("/signup")}>Signup</MenuItem>
+    <MenuItem
+    onClick={handleLogout}
+     _hover={{
+              color:"rgb(255,189,89)"
+            }}>Logout</MenuItem>
+  </MenuList>
+</Menu>
 
             <Button
             _hover={{
@@ -380,6 +424,18 @@ import { useNavigate } from 'react-router-dom';
     {
       label: 'Gifts',
       href: '/product',
-    }
-    
+    },
+    // {
+    //   label : 'Account',
+    //   children :[
+    //       {
+    //         label : "Login",
+    //         href : "/login"
+    //       },
+    //       {
+    //         label:"Logout",
+    //         href:"/logout"
+    //       }
+    //   ]
+    // }
   ];

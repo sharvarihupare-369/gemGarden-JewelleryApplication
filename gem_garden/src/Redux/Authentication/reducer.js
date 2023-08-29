@@ -1,14 +1,22 @@
 
-import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS } from "./actionTypes"
+import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_FAILURE, LOGOUT_REQUEST } from "./actionTypes"
 
 const initialState = {
     isLoading : false,
     isAuth:false,
     user : [],
-    isError : false
+    loggedInUsers:[],
+    isError : false,
+    regMsg : '',
+    errMsg:"",
+    loginMsg:"",
+    isRegistered:false,
+    token:"",
+    isLogout:false
 }
 
 export const reducer = (state=initialState,{type,payload}) => {
+  // console.log(payload)
     switch(type){
       case AUTH_REQUEST : {
         return {
@@ -23,11 +31,26 @@ export const reducer = (state=initialState,{type,payload}) => {
             ...state,
             isLoading : false,
             isError : false,
-            user:[...state.user,payload],
+            user:payload.user,
             isAuth : false,
+            regMsg : payload.msg,
+            isRegistered:true
 
            }
       }
+
+      case AUTH_ERROR : {
+        return {
+          ...state,
+          isLoading : false,
+          isError : true,
+          isAuth : false,
+          errMsg : payload,
+          isRegistered : false
+        }
+      }
+
+
       case LOGIN_REQUEST : {
         return {
           ...state,
@@ -41,7 +64,8 @@ export const reducer = (state=initialState,{type,payload}) => {
           ...state,
           isLoading : false, 
           isError : false,
-          isAuth : true
+          isAuth : true,
+          token:payload.token
         }
       }
       case LOGIN_FAILURE : {
@@ -49,20 +73,35 @@ export const reducer = (state=initialState,{type,payload}) => {
           ...state,
           isLoading : false,
           isError : true,
-          isAuth : false
+          isAuth : false,
+          errMsg:payload
         }
       }
-
-    
-      case AUTH_ERROR : {
+      case LOGOUT_REQUEST : {
+        return {
+          ...state,
+          isLoading :true,
+          isError:false,
+          isAuth : false,
+        }
+      }
+      case LOGOUT_FAILURE : {
         return {
           ...state,
           isLoading : false,
           isError : true,
-          isAuth : false
+          errMsg : payload,
+          isLogout:false
         }
       }
-
+      case AUTH_SUCCESS : {
+        return {
+         ...state,
+         isLoading : false,
+         isError : false,
+         isLogout:true
+        }
+   }
       default : {
         return state
       }

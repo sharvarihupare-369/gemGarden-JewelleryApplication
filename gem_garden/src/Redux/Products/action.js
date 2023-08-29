@@ -14,7 +14,7 @@ export const getProducts = (obj, page) => (dispatch) => {
   dispatch({ type: IsLoading });
   axios
     .get(
-      `https://fine-cyan-rhinoceros-garb.cyclic.app//collection?_page=${page}_limit=10`,
+      `https://gemgardenagain.onrender.com/collection?_page=${page}_limit=10`,
       obj
     )
     .then((data) => {
@@ -30,7 +30,7 @@ export const getProducts = (obj, page) => (dispatch) => {
 export const getProductsArrival = () => (dispatch) => {
   dispatch({ type: IsLoading });
   axios
-    .get("https://fine-cyan-rhinoceros-garb.cyclic.app//arrival")
+    .get("https://gemgardenagain.onrender.com/arrival")
     .then((data) => {
       dispatch({ type: PRODUCT_REQUEST_ARRIVAL, payload: data.data });
       // console.log(data.data)
@@ -42,7 +42,7 @@ export const getProductsArrival = () => (dispatch) => {
 export const getProductsRings = () => (dispatch) => {
   dispatch({ type: IsLoading });
   axios
-    .get("https://fine-cyan-rhinoceros-garb.cyclic.app//rings")
+    .get("https://gemgardenagain.onrender.com/rings")
     .then((data) => {
       dispatch({ type: PRODUCT_REQUEST_RINGS, payload: data.data });
       // console.log(data.data)
@@ -54,7 +54,7 @@ export const getProductsRings = () => (dispatch) => {
 export const getProductsEarRings = () => (dispatch) => {
   dispatch({ type: IsLoading });
   axios
-    .get("https://fine-cyan-rhinoceros-garb.cyclic.app//earrings")
+    .get("https://gemgardenagain.onrender.com/earrings")
     .then((data) => {
       dispatch({ type: PRODUCT_REQUEST_EARRINGS, payload: data.data });
       // console.log(data.data)
@@ -66,7 +66,7 @@ export const getProductsEarRings = () => (dispatch) => {
 export const getProductsBracelets = () => (dispatch) => {
   dispatch({ type: IsLoading });
   axios
-    .get("https://fine-cyan-rhinoceros-garb.cyclic.app//bracelets")
+    .get("https://gemgardenagain.onrender.com/bracelets")
     .then((data) => {
       dispatch({ type: PRODUCT_REQUEST_BRACELETS, payload: data.data });
       // console.log(data.data)
@@ -78,7 +78,7 @@ export const getProductsBracelets = () => (dispatch) => {
 export const getSingleProducts = (id) => (dispatch) => {
   dispatch({ type: IsLoading });
   axios
-    .get(`https://fine-cyan-rhinoceros-garb.cyclic.app//collection/${id}`)
+    .get(`https://gemgardenagain.onrender.com/collection/${id}`)
     .then((data) => {
       dispatch({ type: SINGLE_PRODUCT_REQUEST, payload: data.data });
       // console.log(data.data)

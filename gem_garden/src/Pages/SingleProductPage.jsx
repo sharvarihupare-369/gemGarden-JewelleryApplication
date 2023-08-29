@@ -13,6 +13,9 @@ import { RiExchangeCnyFill } from "react-icons/ri";
 import { BiArchiveOut } from "react-icons/bi";
 import { FaShippingFast } from "react-icons/fa";
 import { ToastStatusExample } from "./PRODUCTS/alert";
+
+
+
 export const SingleProductPage = () => {
   const arrivalData = useSelector(
     (store) => store.productReducer.singlePageData
