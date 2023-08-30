@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 // import { getSingleProducts } from "./PRODUCTS/action";
 import { getSingleProducts } from "../Redux/Products/action";
 import { Dispatch } from "redux";
 import styled from "@emotion/styled";
-import { Button, Input, Select } from "@chakra-ui/react";
+import { Button, Input, Select, useToast } from "@chakra-ui/react";
 import { GiCardExchange } from "react-icons/gi";
 import { SiMaterialdesign } from "react-icons/si";
 import { AiFillSafetyCertificate } from "react-icons/ai";
@@ -17,6 +17,7 @@ import { ToastStatusExample } from "./PRODUCTS/alert";
 
 
 export const SingleProductPage = () => {
+  const[cart,setCart]=useState([])
   const arrivalData = useSelector(
     (store) => store.productReducer.singlePageData
   );
@@ -26,6 +27,56 @@ export const SingleProductPage = () => {
   React.useEffect(() => {
     dispatch(getSingleProducts(id));
   }, []);
+
+const toast=useToast()
+useEffect(()=>{
+  let cartdata=JSON.parse(localStorage.getItem("gem_garden_cart"))||[]
+setCart((pre)=>[...cartdata])
+},[])
+const addToCart = () => {
+  console.log(cart);
+  if (checkDuplicate()) {
+
+
+    toast({
+      title: 'Cant add',
+      description: "Item already in cart",
+      status: 'warning',
+      duration: 2000,
+      isClosable: true,
+    })
+
+    console.log("Item already in cart");
+  } else {
+    setCart((prev) => [...prev, arrivalData]);
+    localStorage.setItem(
+      "gem_garden_cart",
+      JSON.stringify([...cart, {...arrivalData,quantity:1}])
+    );
+    toast({
+      title: 'Congratulations🥳',
+      description: "Product added to cart",
+      status: 'success',
+      duration: 2000,
+      isClosable: true,
+    })
+  }
+};
+
+
+  const checkDuplicate = () => {
+    console.log("running");
+    let isDuplicate = false;
+    cart.map((el) => {
+      console.log(el.id, arrivalData.id);
+      if (el.id === arrivalData.id) {
+        isDuplicate = true;
+      }
+    });
+    return isDuplicate;
+  };
+  
+
   return (
     <DIV>
       <div>
@@ -130,8 +181,8 @@ export const SingleProductPage = () => {
               </Select>
             </div>
 
-            {/* <Button className='btn' onClick={handleAlert} backgroundColor="#C7A550" color="white" margin="0px 12px">ADD TO CART</Button> */}
-            <ToastStatusExample />
+            <Button className='btn' onClick={addToCart} backgroundColor="#C7A550" color="white" margin="0px 12px">ADD TO CART</Button>
+            {/* <ToastStatusExample  /> */}
             <Button
               className="btn"
               backgroundColor="#C7A550"
@@ -167,6 +218,9 @@ export const SingleProductPage = () => {
 };
 
 const DIV = styled.div`
+color: white;
+
+background-color: #171819;
   .topsectionImage {
     display: flex;
     justify-content: space-between;
@@ -176,6 +230,12 @@ const DIV = styled.div`
     justify-content: center;
     padding: 20px;
     align-items: center;
+  }
+  h1{
+    background-color: #171819;
+    font-weight: 600;
+
+  
   }
   .topsectionImage .imageDetail .mainImage {
     width: 90%;
@@ -199,9 +259,12 @@ const DIV = styled.div`
     margin: 12px 0px;
   }
   .imageSideShow {
-    border: 1px solid;
+    /* border: 1px solid; */
     display: flex;
+    border-radius: 50px;
+    cursor: pointer;
     justify-content: center;
+    background-color: #ffde5b2c;
     gap: 20px;
     padding: 20px;
     align-items: center;
