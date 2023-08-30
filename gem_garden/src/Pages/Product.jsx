@@ -16,7 +16,7 @@ export const Product = () => {
   const DataPages = useSelector((store) => store.productReducer.totalpages);
   // console.log(DataPages)
   const page = new Array(Math.ceil(DataPages / 10)).fill(0);
-  console.log(page);
+  // console.log(page);
   const [pages, setPages] = React.useState(1);
 
   const [searchParams] = useSearchParams();
