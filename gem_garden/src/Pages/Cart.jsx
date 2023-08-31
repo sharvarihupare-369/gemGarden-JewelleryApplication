@@ -2,15 +2,32 @@ import { useToast } from '@chakra-ui/react'
 import styled from '@emotion/styled'
 import React, { useEffect, useState } from 'react'
 import dummyimage from "../Assets/necklace.jpg"
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 export const Cart = () => {
   const [cart, setCart] = useState([])
-
+  const [totalprice,setTotalprice]=useState(0)
+  const[checkoutText,setCheckoutText]=useState(false)
+const navigate=useNavigate()
   const toast = useToast()
   useEffect(() => {
     let cartdata = JSON.parse(localStorage.getItem("gem_garden_cart")) || []
+    cartdata.map((el)=>{
+      
+    })
     setCart([...cartdata])
   }, [])
+
+  useEffect(() => {
+    let totalPrice = 0;
+    cart.forEach((item) => {
+      totalPrice += item.quantity * item.currentprice;
+    });
+    setTotalprice(totalPrice);
+  }, [cart]);
+
+
+
+
   console.log(cart)
 
   const handelInc = (data) => {
@@ -40,6 +57,17 @@ localStorage.setItem("gem_garden_cart", JSON.stringify(updatedCart));
     setCart(updatedCart);
     localStorage.setItem("gem_garden_cart", JSON.stringify(updatedCart));
   };
+
+const handelCheckout=()=>{
+  setTimeout(()=>{
+  setCheckoutText(true)
+  },1000)
+
+setTimeout(()=>{
+navigate("/payment")
+},4000)
+}
+
   return (
     <Div>
 
@@ -74,6 +102,9 @@ localStorage.setItem("gem_garden_cart", JSON.stringify(updatedCart));
   <button id='dec' onClick={()=>handelDec(el)}>-</button>
 </div>
 <div>
+  <h2 id='price'>Rs.{el.currentprice*el.quantity}</h2>
+</div>
+<div>
   <button id='remove' onClick={()=>handelRemove(el)}>
     Remove
   </button>
@@ -84,6 +115,47 @@ localStorage.setItem("gem_garden_cart", JSON.stringify(updatedCart));
 
     )
   })}
+<div style={{marginTop:"20px"}}>
+<div className='totalcalculation'>
+    <h1 id='totalh1'>Total</h1>
+<div className='calculation'>
+<div className='calculationitem'>
+<h2 >Price {`(${cart.length})`}</h2>
+<h2>
+  daw
+</h2>
+
+</div>
+<div className='calculationitem'>
+<h2 >Discount</h2>
+
+
+</div>
+<div className='calculationitem'>
+<h2 >Delivery charges </h2>
+<h2>
+  Rs.89
+</h2>
+
+</div>
+<div className='calculationitem'>
+<h2 className="totalprice" >Total Price </h2>
+<h2>
+{totalprice}
+</h2>
+
+</div>
+<button id='checkout' onClick={handelCheckout}>
+{checkoutText?"Moving to payment...":"Move to checkout"}
+</button>
+</div>
+
+  </div>
+</div>
+
+
+
+
 </div>
 </div>
     </Div>
@@ -92,16 +164,88 @@ localStorage.setItem("gem_garden_cart", JSON.stringify(updatedCart));
 
 const Div=styled.div`
   /* border: 1px solid red; */
+
+  @media (max-width: 600px) {
+.dummyimagediv{
+  display: none;
+}
+.cartpage{
+  border: 5px solid orange;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+.cartpage>div{
+  border: 5px solid green;
+  width: 100%;
+}
+.card{
+  height: 50px;
+}
+
+  }
+  
   background-color: #171819;
   height: 100vh;
+  .calculationitem{
+    display: flex;
+    justify-content: space-between;
+    background-color: #cbcbcb;
+    margin-top: 2px;
+    padding: 5px 20px;
+  }
+  #totalh1{
+    padding: 0;
+    
+  }
+  .totalprice{
+    font-size: 1.4rem;
+    font-weight: 800;
+  }
+  #checkout{
+    width: 100%;
+    border-radius: 0px;
+    background-color: #171819;
+    color: white;
+    font-weight: 600;
+    font-size: 1.5rem;
+    height: 50px;
+  }
+
+  #checkout:hover{
+    width: 100%;
+    border-radius: 0px;
+    background-color: #1d8f00b9;
+    color: white;
+    border: 2px solid white;
+    color: #ffffff;
+    height: 50px;
+  }
+
+  .totalcalculation{
+    border: 3px solid grey;
   
+    padding: 20px;
+    width: 50%;
+margin: auto;
+  }
   h1{
     background-color:white;
     color: #171819;
     font-weight: 600;
     padding: none;
   }
+  #price{
 
+    color: rgb(255, 214, 93);
+    font-weight: 600;
+font-size: 1.5rem;
+  }
+h2{
+  font-weight: 600;
+font-size: 1.2rem;
+}
 .cartpage{
   /* border: 5px solid orange; */
   display: grid;
@@ -157,7 +301,8 @@ border: none;
 }
 .card{
   height: 80px;
-display: flex;
+display: grid;
+grid-template-columns: repeat(5,1fr);
 justify-content: space-around;
 color: #ffffff;
 background-color: #797979bc;
