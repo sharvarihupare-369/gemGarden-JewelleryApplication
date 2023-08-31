@@ -1,4 +1,6 @@
+
 import axios from 'axios';
+
 
 import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, LOGIN_SUCCESS, LOGOUT_REQUEST } from "./actionTypes";
 
@@ -45,7 +47,7 @@ import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, L
 
   export const logout = (token) => (dispatch) => {
       dispatch({type:LOGOUT_REQUEST})
-      axios.get('https://gemgaredenbackenddatamdb.onrender.com/users/logout',token).then((res)=>{
+     return axios.get('https://gemgaredenbackenddatamdb.onrender.com/users/logout',token).then((res)=>{
         console.log(res)
       }).catch((err)=>{
         console.log(err)

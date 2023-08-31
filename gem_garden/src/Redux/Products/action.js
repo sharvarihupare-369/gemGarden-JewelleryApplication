@@ -10,6 +10,8 @@ import {
   TOTALPAGE,
 } from "./actionTypes";
 
+const token = localStorage.getItem("user-token") ||  ""
+
 export const getProducts = (obj, page) => (dispatch) => {
   dispatch({ type: IsLoading });
   axios

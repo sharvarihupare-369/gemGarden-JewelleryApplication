@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Payment = () => {
-  return (
+  return ( 
     <div>Payment</div>
   )
 }

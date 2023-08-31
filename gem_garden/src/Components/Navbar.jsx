@@ -52,6 +52,8 @@ import { logout } from '../Redux/Authentication/action';
 
     const handleLogout = () => {
        dispatch(logout(token))
+        localStorage.removeItem("user-token")
+       
     }
 
     return (

@@ -32,7 +32,7 @@ export const Product = () => {
   // function handlePage(page:number){
   //   // dispatch(getProducts(obj,page))
   //   setPages(page)
-  // }
+  // }  
   React.useEffect(() => {
     // dispatch(getProducts())
     dispatch(getProducts(obj, pages));
