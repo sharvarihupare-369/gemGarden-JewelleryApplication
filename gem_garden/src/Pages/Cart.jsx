@@ -183,7 +183,9 @@ const Div=styled.div`
 .card{
   height: 50px;
 }
-
+.card{
+  height: 50px;
+}
   }
   
   background-color: #171819;
