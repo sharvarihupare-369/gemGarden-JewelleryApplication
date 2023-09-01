@@ -1,5 +1,7 @@
 import axios from "axios";
 import {
+  ADDTOCART,
+  DELETECART,
   GETCART,
   IsError,
   IsLoading,

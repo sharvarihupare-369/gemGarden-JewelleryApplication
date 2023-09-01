@@ -31,6 +31,7 @@ import { AUTH_ERROR, AUTH_REQUEST, AUTH_SUCCESS, LOGIN_FAILURE, LOGIN_REQUEST, L
     
  
     axios.post('https://gemgaredenbackenddatamdb.onrender.com/users/login',loginData).then((res)=>{
+      console.log(res)
       // console.log(res)
       dispatch({type:LOGIN_SUCCESS, payload:res.data})
    }).catch((err) => {
