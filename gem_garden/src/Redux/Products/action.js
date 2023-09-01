@@ -131,4 +131,44 @@ export const updateCartProduct = (token, productId, quantity) => (dispatch) => {
     });
 };
 
+
+
+export const addToCartProduct = (token, productId, quantity) => (dispatch) => {
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
+  
+  axios
+    .post(
+      `https://gemgaredenbackenddatamdb.onrender.com/cart`,
+      { productId, quantity },
+      { headers }
+    )
+    .then((response) => {
+      const data = response.data;
+      dispatch({ type: ADDTOCART, payload: data });
+    })
+    .catch((error) => {
+      dispatch({ type: IsError });
+    });
+};
+
+export const deleteCartProduct = (token, productId) => (dispatch) => {
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
+  
+  axios
+    .delete(`https://gemgaredenbackenddatamdb.onrender.com/cart/${productId}`, {
+      headers
+    })
+    .then((response) => {
+      const data = response.data;
+      dispatch({ type: DELETECART, payload: data });
+    })
+    .catch((error) => {
+      dispatch({ type: IsError });
+    });
+};
+
 //material--Diamond,Pearl.Gold,Gemstone,Solitaire
