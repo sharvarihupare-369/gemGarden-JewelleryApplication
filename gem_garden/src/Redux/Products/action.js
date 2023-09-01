@@ -1,5 +1,6 @@
 import axios from "axios";
 import {
+  GETCART,
   IsError,
   IsLoading,
   PRODUCT_REQUEST_ARRIVAL,
@@ -8,6 +9,7 @@ import {
   PRODUCT_REQUEST_RINGS,
   SINGLE_PRODUCT_REQUEST,
   TOTALPAGE,
+  UPDATECART,
 } from "./actionTypes";
 
 export const getProducts = (obj, page) => (dispatch) => {
@@ -82,6 +84,47 @@ export const getSingleProducts = (id) => (dispatch) => {
     .then((data) => {
       dispatch({ type: SINGLE_PRODUCT_REQUEST, payload: data.data });
       // console.log(data.data)
+    })
+    .catch((error) => {
+      dispatch({ type: IsError });
+    });
+};
+
+
+
+
+export const getCartProducts = (token) => (dispatch) => {
+  dispatch({ type: IsLoading });
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
+  axios
+    .get(`https://gemgaredenbackenddatamdb.onrender.com/cart`, {
+      headers,
+    })
+    .then((response) => {
+      const data = response.data;
+      dispatch({ type: GETCART, payload: data });
+    })
+    .catch((error) => {
+      dispatch({ type: IsError });
+    });
+};
+
+export const updateCartProduct = (token, productId, quantity) => (dispatch) => {
+  const headers = {
+    Authorization: `Bearer ${token}`,
+  };
+  
+  axios
+    .put(
+      `https://gemgaredenbackenddatamdb.onrender.com/cart/update/${productId}`,
+      { quantity },
+      { headers }
+    )
+    .then((response) => {
+      const data = response.data;
+      dispatch({ type: UPDATECART, payload: data });
     })
     .catch((error) => {
       dispatch({ type: IsError });

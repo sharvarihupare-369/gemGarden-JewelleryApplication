@@ -1,5 +1,8 @@
 
 import {
+  ADDTOCART,
+    DELETECART,
+    GETCART,
     IsError,
     IsLoading,
     PRODUCT_REQUEST_ARRIVAL,
@@ -8,6 +11,7 @@ import {
     PRODUCT_REQUEST_RINGS,
     SINGLE_PRODUCT_REQUEST,
     TOTALPAGE,
+    UPDATECART,
   } from "./actionTypes";
   
   // import { isError, isLoading } from "./actionTypes"
@@ -22,6 +26,7 @@ import {
     isError: false,
     singlePageData: {},
     totalpages: "",
+    cart:[]
   };
   
   export const reducer = (state = initialState, action) => {
@@ -67,6 +72,36 @@ import {
           isError: false,
           singlePageData: action.payload,
         };
+        case GETCART:
+          return{
+            ...state,    
+                  isLoading: false,
+            isError: false,
+            cart:action.paylod
+          }
+
+          case ADDTOCART:
+            return{
+              ...state,
+              isLoading: false,
+              isError: false,
+              cart:action.paylod
+            }
+            case DELETECART:
+              return{
+                ...state,
+                isLoading: false,
+                isError: false,
+                cart:action.paylod
+              }
+              case UPDATECART:
+                return{
+                  ...state,
+                  isLoading: false,
+                  isError: false,
+                  cart:action.paylod
+                }
+
       default:
         return state;
     }
