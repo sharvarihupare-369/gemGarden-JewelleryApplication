@@ -16,7 +16,7 @@ export const Product = () => {
   const DataPages = useSelector((store) => store.productReducer.totalpages);
   // console.log(DataPages)
   const page = new Array(Math.ceil(DataPages / 10)).fill(0);
-  console.log(page);
+  // console.log(page);
   const [pages, setPages] = React.useState(1);
 
   const [searchParams] = useSearchParams();
@@ -111,6 +111,12 @@ const DIV = styled.div`
   .card button {
     width: 100%;
     padding: 12px;
+  }
+
+  @media only screen and (min-width:250px) and (max-width:600) {
+    .productcards {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 
   @media only screen and (max-width: 880px) {
