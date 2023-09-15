@@ -1,4 +1,4 @@
-# Jewelry Application
+# Jewelery Application
 
 ![Project Logo](gem_garden/src/Assets/GemGardenLogo3.png)
 
