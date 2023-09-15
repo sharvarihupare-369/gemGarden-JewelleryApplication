@@ -97,82 +97,83 @@ export const getSingleProducts = (id) => (dispatch) => {
 
 
 
-export const getCartProducts = (token) => (dispatch) => {
-  dispatch({ type: IsLoading });
-  const headers = {
-    Authorization: `Bearer ${token}`,
-  };
-  axios
-    .get(`https://gemgaredenbackenddatamdb.onrender.com/cart`, {
-      headers,
-    })
-    .then((response) => {
-      const data = response.data;
-      dispatch({ type: GETCART, payload: data });
-    })
-    .catch((error) => {
-      dispatch({ type: IsError });
-    });
-};
+// export const getCartProducts = (token) => (dispatch) => {
+//   dispatch({ type: IsLoading });
+//   const headers = {
+//     Authorization: `Bearer ${token}`,
+//   };
+//   axios
+//     .get(`https://gemgaredenbackenddatamdb.onrender.com/cart`, {
+//       headers,
+//     })
+//     .then((response) => {
+//       const data = response.data;
+//       dispatch({ type: GETCART, payload: data });
+//     })
+//     .catch((error) => {
+//       dispatch({ type: IsError });
+//     });
+// };
 
-export const updateCartProduct = (token, productId, quantity) => (dispatch) => {
-  const headers = {
-    Authorization: `Bearer ${token}`,
-  };
+// export const updateCartProduct = (token, productId, quantity) => (dispatch) => {
+//   const headers = {
+//     Authorization: `Bearer ${token}`,
+//   };
   
-  axios
-    .put(
-      `https://gemgaredenbackenddatamdb.onrender.com/cart/update/${productId}`,
-      { quantity },
-      { headers }
-    )
-    .then((response) => {
-      const data = response.data;
-      dispatch({ type: UPDATECART, payload: data });
-    })
-    .catch((error) => {
-      dispatch({ type: IsError });
-    });
-};
+//   axios
+//     .put(
+//       `https://gemgaredenbackenddatamdb.onrender.com/cart/update/${productId}`,
+//       { quantity },
+//       { headers }
+//     )
+//     .then((response) => {
+//       const data = response.data;
+//       dispatch({ type: UPDATECART, payload: data });
+//     })
+//     .catch((error) => {
+//       dispatch({ type: IsError });
+//     });
+// };
 
 
 
-export const addToCartProduct = (token, productId, quantity) => (dispatch) => {
-  const headers = {
-    Authorization: `Bearer ${token}`,
-  };
+// export const addToCartProduct = (token, productId, quantity) => (dispatch) => {
+//   const headers = {
+//     Authorization: `Bearer ${token}`,
+//   };
   
-  axios
-    .post(
-      `https://gemgaredenbackenddatamdb.onrender.com/cart`,
-      { productId, quantity },
-      { headers }
-    )
-    .then((response) => {
-      const data = response.data;
-      dispatch({ type: ADDTOCART, payload: data });
-    })
-    .catch((error) => {
-      dispatch({ type: IsError });
-    });
-};
+//   axios
+//     .post(
+//       `https://gemgaredenbackenddatamdb.onrender.com/cart`,
+//       { productId, quantity },
+//       { headers }
+//     )
+//     .then((response) => {
+//       const data = response.data;
+//       console.log(data)
+//       dispatch({ type: ADDTOCART, payload: data });
+//     })
+//     .catch((error) => {
+//       dispatch({ type: IsError });
+//     });
+// };
 
-export const deleteCartProduct = (token, productId) => (dispatch) => {
-  const headers = {
-    Authorization: `Bearer ${token}`,
-  };
+// export const deleteCartProduct = (token, productId) => (dispatch) => {
+//   const headers = {
+//     Authorization: `Bearer ${token}`,
+//   };
   
-  axios
-    .delete(`https://gemgaredenbackenddatamdb.onrender.com/cart/${productId}`, {
-      headers
-    })
-    .then((response) => {
-      const data = response.data;
-      dispatch({ type: DELETECART, payload: data });
-    })
-    .catch((error) => {
-      dispatch({ type: IsError });
-    });
-};
+//   axios
+//     .delete(`https://gemgaredenbackenddatamdb.onrender.com/cart/${productId}`, {
+//       headers
+//     })
+//     .then((response) => {
+//       const data = response.data;
+//       dispatch({ type: DELETECART, payload: data });
+//     })
+//     .catch((error) => {
+//       dispatch({ type: IsError });
+//     });
+// };
 
 //material--Diamond,Pearl.Gold,Gemstone,Solitaire

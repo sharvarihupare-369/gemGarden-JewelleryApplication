@@ -44,16 +44,15 @@ import { logout } from '../Redux/Authentication/action';
     const { isOpen, onToggle } = useDisclosure();
     const navigate = useNavigate()
     // const { isAuth,errMsg,token } = useSelector((s/tore) => store.authReducer)
-
+    const token =  localStorage.getItem("user-token") || ""
     const [show,setShow] = useState(false)
 
     const dispatch = useDispatch()
-    const { token } = useSelector((store) => store.authReducer)
-
+    // const { token } = useSelector((store) => store.authReducer)
+ 
     const handleLogout = () => {
        dispatch(logout(token))
         localStorage.removeItem("user-token")
-       
     }
 
     return (
@@ -186,9 +185,11 @@ import { logout } from '../Redux/Authentication/action';
     <MenuItem _hover={{
               color:"rgb(255,189,89)"
             }}>Profile</MenuItem>
-    <MenuItem _hover={{
+   {
+    token ? "" : <MenuItem _hover={{
               color:"rgb(255,189,89)"
             }} onClick={()=>navigate("/signup")}>Signup</MenuItem>
+               }
     <MenuItem
     onClick={handleLogout}
      _hover={{

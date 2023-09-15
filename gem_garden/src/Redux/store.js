@@ -4,13 +4,14 @@ import {reducer as authReducer} from './Authentication/reducer'
 import {reducer as productReducer} from './Products/reducer' 
 // import {reducer as cartReducer} from './Cart/reducer' 
 import {reducer as adminReducer} from './Admin/reducer' 
+import {reducer as cartReducer} from './Cart/reducer' 
  
 
 
 const rootReducer = combineReducers({
     authReducer,
     productReducer,
-    // cartReducer,
+    cartReducer,
     adminReducer
 })
 

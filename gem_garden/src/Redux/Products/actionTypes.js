@@ -9,7 +9,7 @@ export const IsLoading = "isLoading";
 export const IsError = "isError";
 export const TOTALPAGE = "TOTALPAGE";
 
-export const GETCART="GETCART"
-export const UPDATECART="UPDATECART"
-export const ADDTOCART="ADDTOCART"
-export const DELETECART="DELETECART"
+// export const GETCART="GETCART"
+// export const UPDATECART="UPDATECART"
+// export const ADDTOCART="ADDTOCART"
+// export const DELETECART="DELETECART"

@@ -28,7 +28,7 @@ const navigate=useNavigate()
 
 
 
-  console.log(cart)
+  // console.log(cart)
 
   const handelInc = (data) => {
     const updatedCart = cart.map((item) =>

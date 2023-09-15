@@ -18,13 +18,22 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import React from "react";
+import { useDispatch } from "react-redux";
+import { addToCartProduct } from "../../Redux/Cart/action";
+// import { addToCartProduct } from "../../Redux/Products/action";
 
 export function CompExample() {
+  const dispatch = useDispatch()
   const {
     isOpen: isVisible,
     onClose,
     onOpen,
   } = useDisclosure({ defaultIsOpen: true });
+  
+  const handleClick = () => {
+     dispatch(addToCartProduct())
+  }
+
 
   return isVisible ? (
     <Alert status="success">
@@ -48,7 +57,7 @@ export function CompExample() {
     //   <Button onClick={onOpen}>Show Alert</Button>
     <Button
       className="btn"
-      onClick={onOpen}
+      onClick={handleClick}
       backgroundColor="#C7A550"
       margin="0px 12px"
     >

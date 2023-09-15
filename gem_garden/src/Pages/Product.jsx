@@ -44,7 +44,7 @@ export const Product = () => {
       <div className="mainBody">
         <div className="productcards">
           {arrivalData.map((ele, ind) => (
-            <Card key={ind} {...ele} />
+            <Card key={ind} ele={ele} />
           ))}
         </div>
         <div className="pagination">

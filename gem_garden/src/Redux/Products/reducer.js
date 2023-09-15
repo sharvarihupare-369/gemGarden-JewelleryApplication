@@ -26,7 +26,7 @@ import {
     isError: false,
     singlePageData: {},
     totalpages: "",
-    cart:[]
+    // cart:[]
   };
   
   export const reducer = (state = initialState, action) => {
@@ -72,35 +72,35 @@ import {
           isError: false,
           singlePageData: action.payload,
         };
-        case GETCART:
-          return{
-            ...state,    
-                  isLoading: false,
-            isError: false,
-            cart:action.paylod
-          }
+        // case GETCART:
+        //   return{
+        //     ...state,    
+        //     isLoading: false,
+        //     isError: false,
+        //     cart:action.payload
+        //   }
 
-          case ADDTOCART:
-            return{
-              ...state,
-              isLoading: false,
-              isError: false,
-              cart:action.paylod
-            }
-            case DELETECART:
-              return{
-                ...state,
-                isLoading: false,
-                isError: false,
-                cart:action.paylod
-              }
-              case UPDATECART:
-                return{
-                  ...state,
-                  isLoading: false,
-                  isError: false,
-                  cart:action.paylod
-                }
+        //   case ADDTOCART:
+        //     return{
+        //       ...state,
+        //       isLoading: false,
+        //       isError: false,
+        //       cart:[...state.cart,action.payload]
+        //     }
+        //     case DELETECART:
+        //       return{
+        //         ...state,
+        //         isLoading: false,
+        //         isError: false,
+        //         cart:action.payload
+        //       }
+        //       case UPDATECART:
+        //         return{
+        //           ...state,
+        //           isLoading: false,
+        //           isError: false,
+        //           cart:action.payload
+        //         }
 
       default:
         return state;

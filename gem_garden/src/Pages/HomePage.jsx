@@ -236,7 +236,7 @@ export const HomePage = () => {
     
    </Box>
 
-   <Box textAlign={"left"} mt="60px"  >
+   <Box display={{base:"none",sm:"none",md:"block",lg:"block","xl":"block","2xl":"block"}} textAlign={"left"} mt="60px"  >
   
     <Flex flexDirection={{base : "column", sm : "column", md :"row", lg : "row" , xl : "row" , "2xl" : "row"}} justifyContent={"space-around"}>
    
@@ -246,9 +246,9 @@ export const HomePage = () => {
       </Box>
       
       <Box mt="90px" w="48%" p="30px">
-        <Heading size={"lg"} fontWeight={"600"}>GEM GARDEN</Heading>
-        <Text>Multi-brand premium boutique with a wide range<br/> of branded jewellery and accessories</Text>
-        <Box mt="50px">
+        <Heading display={{base:"none",sm:"none",md:"block",lg:"block","xl":"block","2xl":"block"}} size={"lg"} fontWeight={"600"}>GEM GARDEN</Heading>
+        <Text display={{base:"none",sm:"none",md:"block",lg:"block","xl":"block","2xl":"block"}}>Multi-brand premium boutique with a wide range<br/> of branded jewellery and accessories</Text>
+        <Box mt="50px" display={{base:"none",sm:"none",md:"block",lg:"block","xl":"block","2xl":"block"}}>
           <Text>Gem Garden presents leading global brands of jewellery <br/> known for their unique style and high quality<br/> craftsmanship</Text>
         </Box>
 
@@ -257,13 +257,13 @@ export const HomePage = () => {
     </Flex>
    </Box>
 
-   <Box textAlign={"left"} mt="30px"  >
+   <Box display={{base:"none",sm:"none",md:"block",lg:"block","xl":"block","2xl":"block"}} textAlign={"left"} mt="30px"  >
   
-    <Flex flexDirection={{base : "column", sm : "column", md :"row", lg : "row" , xl : "row" , "2xl" : "row"}} justifyContent={"space-around"}>
-    <Box mt="20px" w="48%" p="10px">
-        <Heading size={"lg"} fontWeight={"600"}>About</Heading>
-        <Text>Gem Garden is More than just Gliding</Text>
-        <Box mt="20px" w="48%">
+    <Flex flexDirection={{base : "column", sm : "column", md :"row", lg : "row" , xl : "row" , "2xl" : "row"}} justifyContent={{base:"center",sm:"center",md:"space-around",lg:"space-around",xl:"space-around","2xl":"space-around"}}>
+    <Box mt="20px" w={{base:"90%",sm:"90%",md:"60%",lg:"60%",xl:"48%","2xl":"48%"}} p="10px">
+        <Heading size={"lg" } display={{base:"none",sm:"none",md:"none",lg:"block","xl":"block","2xl":"block"}} fontWeight={"600"}>About</Heading>
+        <Text display={{base:"none",sm:"none",md:"none",lg:"block","xl":"block","2xl":"block"}}>Gem Garden is More than just Gliding</Text>
+        <Box mt="20px" w="48%" display={{base:"none",sm:"none",md:"none",lg:"block","xl":"block","2xl":"block"}}>
         <Box mt="20px">
           <Text>Gem Garden presents leading global brands of jewellery  known for their unique style and high quality craftsmanship</Text>
         </Box>
